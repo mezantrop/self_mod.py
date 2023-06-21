@@ -7,6 +7,11 @@ can do whatever you want with this stuff. If we meet some day, and you think
 this stuff is worth it, you can buy me a beer in return Mikhail Zakharov
 """
 
+counter_start = 2
+filename_script_2 = 'Run me to see magic.pyw'
+filename_script_1 = 'Run me once more to see magic.pyw'
+filename_gif = 'Magic.gif'
+
 # --- vvv --- Do not change -=<Tag>=- names within Data section below --- vvv ---------------------------------------- #
 # -=<Data>=-
 # -=<Counter>=-
@@ -4170,6 +4175,7 @@ fwh2rAsdV83pIPQMVHU7G/Ijj3WUVmpYr2Y2F6apHnAu/A2lwHRFofJej/FfzzYsF3b3joiAAAA7"""
 
 import os
 import base64
+import time
 
 with open(__file__, 'r') as f:
     c = f.read()
@@ -4198,14 +4204,22 @@ if cnt[1] == 2:
     c[cl] = cnt[0] + '= ' + str(cnt[1])
     with open(__file__, 'w') as f:
         f.write('\n'.join(c))
-    os.rename(__file__, 'Run me to see magic.pyw')
+    os.rename(__file__, filename_script_2)
 elif cnt[1] == 1:
     c[cl] = cnt[0] + '= ' + str(cnt[1])
     with open(__file__, 'w') as f:
         f.write('\n'.join(c))
-    os.rename(__file__, 'Run me once more to see magic.pyw')
+    os.rename(__file__, filename_script_1)
 elif cnt[1] == 0:
     newc = base64.b64decode(magic)
     with open(__file__, 'wb') as f:
         f.write(newc)
-    os.rename(__file__, 'Magic.gif')
+    os.rename(__file__, filename_gif)
+
+    time.sleep(15)
+    c[cl] = cnt[0] + '= ' + str(counter_start)
+    with open(__file__, 'w') as f:
+        f.write('\n'.join(c))
+    os.rename(__file__, filename_script_2)
+    os.unlink('Magic.gif')
+    
