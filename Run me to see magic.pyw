@@ -7,10 +7,11 @@ can do whatever you want with this stuff. If we meet some day, and you think
 this stuff is worth it, you can buy me a beer in return Mikhail Zakharov
 """
 
-counter_start = 2
-filename_script_2 = 'Run me to see magic.pyw'
-filename_script_1 = 'Run me once more to see magic.pyw'
-filename_gif = 'Magic.gif'
+counter_start = 2                                               # Run counter
+filename_script_2 = 'Run me to see magic.pyw'                   # Original script name
+filename_script_1 = 'Run me once more to see magic.pyw'         # The new script name after first run
+filename_gif = 'Magic.gif'                                      # The GIF file name afrer the second run
+wait_time = 15                                                  # Wait seconds before changing into filename_script_2
 
 # --- vvv --- Do not change -=<Tag>=- names within Data section below --- vvv ---------------------------------------- #
 # -=<Data>=-
@@ -4216,10 +4217,10 @@ elif cnt[1] == 0:
         f.write(newc)
     os.rename(__file__, filename_gif)
 
-    time.sleep(15)
+    time.sleep(wait_time)
     c[cl] = cnt[0] + '= ' + str(counter_start)
     with open(__file__, 'w') as f:
         f.write('\n'.join(c))
     os.rename(__file__, filename_script_2)
-    os.unlink('Magic.gif')
+    os.unlink(filename_gif)
     
