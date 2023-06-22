@@ -4,4 +4,6 @@
 
 The full circle of transformation: Original Script -> Changed Script -> GIF -> Original Script
 
+*For the magic to happen run the script in GUI* 
+
 ![Screencapture](capture.gif)
